@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#FFC24B"/>
+      <stop offset="0.55" stop-color="#FF9419"/>
+      <stop offset="1" stop-color="#F0561C"/>
+    </linearGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFD36B" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFB13A" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8441A" stop-opacity=".0"/>
+      <stop offset="1" stop-color="#C9330F" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".38"/>
+      <stop offset=".18" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="noteShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#B8400E" flood-opacity=".45"/>
+    </filter>
+    <clipPath id="squircle"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#body)"/>
+    <path d="M100 640 C300 560 470 700 660 620 C780 570 860 520 924 540 V924 H100Z" fill="url(#wave1)"/>
+    <path d="M100 760 C320 690 500 800 700 730 C800 695 870 700 924 720 V924 H100Z" fill="url(#wave2)"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#shine)"/>
+    <!-- a single eighth note in the middle: head, stem and one flowing flag -->
+    <g transform="translate(500 560) rotate(-4)" filter="url(#noteShadow)" fill="#FFF6E8">
+      <ellipse cx="-38" cy="92" rx="74" ry="56" transform="rotate(-22 -38 92)"/>
+      <rect x="18" y="-210" width="28" height="300" rx="14"/>
+      <path d="M32 -210 C40 -150 88 -128 120 -96 C152 -64 164 -18 146 26 C140 40 128 36 132 22 C146 -24 120 -66 84 -86 C64 -97 46 -102 32 -112Z"/>
+    </g>
+    <!-- the notch -->
+    <path d="M318 100 H706 V196 C706 232 682 256 646 256 H378 C342 256 318 232 318 196Z" fill="#0B0B0D"/>
+    <g filter="url(#glow)" stroke="#FFC46A" stroke-width="22" stroke-linecap="round">
+      <path d="M462 160 V200"/><path d="M512 140 V220"/><path d="M562 160 V200"/>
+    </g>
+  </g>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="185" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="3"/>
+</svg>
